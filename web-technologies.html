@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- Mirrored from cncinfotech.in/web-technologies.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 05 Sep 2023 07:58:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CNC Infotech | Web Technologies</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+    <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="">
+    <!-- google-fonts -->
+    <link href="http://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&amp;display=swap"
+        rel="stylesheet">
+    <!-- //google-fonts -->
+    <!-- Template CSS Style link -->
+    <link rel="stylesheet" href="assets/css/style-starter.css">
+     
+<script src="../ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+   
+#myBtn {
+  
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #25D366; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: #075E54; /* Add a dark-grey background on hover */
+}
+
+</style>
+<script>
+function allfunc() {
+loadDoc();
+savedata();
+}
+</script>
+<script>
+function loadDoc() {
+    var number = document.getElementById("number").value;
+    var msg = document.getElementById("msg").value;
+    var instanceid = document.getElementById("instanceid").value;
+    var token = document.getElementById("token").value;
+var url="https://gfoglobal.com/api/send.php?number=91"+number+"&type=text&message="+msg+"&instance_id="+instanceid+"&access_token="+token+"";
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("demo").innerHTML = this.responseText;
+  }
+  xhttp.open("GET.html", url);
+  xhttp.send();
+}
+</script>
+<script>
+function savedata(){
+    
+  var number = document.getElementById("number").value;
+    var msg = document.getElementById("msg").value;
+    var name = document.getElementById("name").value;
+
+  $.ajax({
+  type: "POST",
+  url: "valichat.php",
+  data: {number: number,msg:msg, name:name},
+  success: function(data){
+   // $("#cartdataold").hide();
+    $("#getsaved").html(data);
+    alert("Request Submitted. Please check your Whatsapp");
+  }
+  });
+}
+</script>
+<script>
+
+$(document).ready(function() {
+
+ $('.mobile-valid').on('keypress', function(e) {
+
+            var $this = $(this);
+            var regex = new RegExp("^[0-9\b]+$");
+            var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+            // for 10 digit number only
+            if ($this.val().length > 9) {
+                e.preventDefault();
+                return false;
+            }
+            if (e.charCode < 54 && e.charCode > 47) {
+                if ($this.val().length == 0) {
+                    e.preventDefault();
+                    return false;
+                } else {
+                    return true;
+                }
+
+            }
+            if (regex.test(str)) {
+                return true;
+            }
+            e.preventDefault();
+            return false;
+        });
+
+   });
+</script>
+</head>
+
+<body>
+      <a target="_blank" href="https://wa.me/919649900725"><button class="btn btn-primary" id="myBtn"><i class="fab fa-whatsapp"></i></button></a>
+  <!--header-->
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg stroke">
+                <h1>
+                    <a class="navbar-brand" href="index-2.html">
+                        <img src="assets/images/logo.jpg" alt="cnc infotech">
+                    </a>
+                </h1>
+                <!-- if logo is image enable this   
+    <a class="navbar-brand" href="#index.html">
+        <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+    </a> -->
+                <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
+                    data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav ml-lg-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="index-2.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="programming-courses.html">Programming</a>
+                        </li>
+						<li class="nav-item ">
+                            <a class="nav-link" href="digital-marketing.html">Digital Marketing</a>
+                        </li>
+						<li class="nav-item active">
+                            <a class="nav-link" href="web-technologies.html">Web Technologies</a>
+                        </li>
+						<li class="nav-item ">
+                            <a class="nav-link" href="networking.html">Networking</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="graphic-designing.html">Graphic Designing</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="accounting.html">Accounting</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="artificial-intelligence.html">Artificial Intelligence</a>
+                        </li>
+                    </ul>
+</div>               
+            </nav>
+        </div>
+    </header>
+    <!--//header-->
+
+    <!-- contact section -->
+    <section class="w3l-contact-11 py-5" id="contact">
+        <div class="container py-md-5 py-4">
+            <div class="title-heading-w3 mx-auto text-center mb-5 pb-xl-4">
+                
+                <h3 class="title-main">Web Technologies</h3>
+            </div>
+             <div class="row">
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-4">
+                           <div class="card">
+  <div class="card-header"><b>Web Designing (HTML5, CSS3, Bootstrap 5)</b></div>
+  <div class="card-body"><img src="assets/images/courses/webdes.jpg" class="img-thumbnail" alt="web designing"></div>
+  <div class="card-footer"><a href="website-designing.html">View Details</a></div>
+</div> 
+                        </div>
+                        <div class="col-sm-4">
+                           <div class="card">
+  <div class="card-header"><b>ReactJs</b></div>
+  <div class="card-body"><img src="assets/images/courses/react.jpg" class="img-thumbnail" alt="react js"></div>
+  <div class="card-footer"><a href="react.html">View Details</a></div>
+</div> 
+                        </div>
+                        <div class="col-sm-4">
+                           <div class="card">
+  <div class="card-header"><b>Angular JS</b></div>
+  <div class="card-body"><img src="assets/images/courses/angularjs.jpg" class="img-thumbnail" alt="angular js"></div>
+  <div class="card-footer"><a href="angular-js.html">View Details</a></div>
+</div> 
+                        </div>
+                        <div class="col-sm-4">
+                           <div class="card">
+  <div class="card-header"><b>NODE JS</b></div>
+  <div class="card-body"><img src="assets/images/courses/nodejs.png" class="img-thumbnail" alt="node js"></div>
+  <div class="card-footer"><a href="node-js.html">View Details</a></div>
+</div> 
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3" style="background-color: #000; color:#fff; padding:10px;">
+                        <h4 class="title-main" style="color:#fff">QUICK ENQUIRY</h4><br>
+                        <form action="https://cncinfotech.in/valienq.php" method="post">
+      <div class="form-group">
+        <label >Your Name:</label>
+        <input type="text" class="form-control" placeholder="Enter Name" required name="name">
+      </div>
+      <div class="form-group">
+        <label >Your Email:</label>
+        <input type="email" class="form-control" placeholder="Enter Email" required name="email">
+      </div>
+      <div class="form-group">
+        <label >Phone:</label>
+        <input type="number" class="form-control" placeholder="Enter Phone" required name="phone">
+      </div>
+      <div class="form-group">
+        <label >Interested in Course:</label>
+        <input type="text" class="form-control" placeholder="Enter Course" required name="course">
+      </div>
+      <div class="form-group">
+        <label >Query:</label>
+        <textarea class="form-control" rows="5" name="message" required></textarea>
+      </div>
+      <input type="hidden" value="web-technologies.php" name="source">
+      <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+                    </div>
+               </div>
+        </div>
+    </section>
+    <!-- //contact section -->
+
+        <!-- footer -->
+    <footer class="w3l-footer-22 py-5">
+        <div class="container py-md-5 py-4">
+            <div class="row sub-columns pt-lg-2">
+                <div class="col-lg-4 col-sm-6 sub-one-left">
+                    <h6>About </h6>
+                    <p style="text-align:justify;" >CNC Infotech Skill Development Private Limited is a foundation standing strong since 22 years in the business, focusing into software development and IT educational enterprise that firmly believes in empowering young minds with skills and enlightening them with knowledge to be the future leaders. CNC is tantamount with INTEGRITY, INNOVATION and EXCELLENCE.</p>
+                    
+                </div>
+                <div class="col-lg-3 col-sm-6 sub-two-right pl-lg-5 mt-sm-0 mt-5">
+                    <h6>Quick Link</h6>
+                    <ul>
+                        <li><a href="index-2.html"><span class="fas fa-angle-right mr-2"></span>Home</a>
+                        </li>
+                        <li><a target="_blank" href="https://cncdost.com/about.php"><span class="fas fa-angle-right mr-2"></span>About</a>
+                        </li>
+                        <li><a target="_blank" href="https://cncdost.com/career.php"><span class="fas fa-angle-right mr-2"></span>Career</a>
+                        </li>
+						<li><a target="_blank" href="http://cncdost.com/blog"><span class="fas fa-angle-right mr-2"></span>Blog</a>
+                        </li>
+                        <li><a href="contact.html"><span class="fas fa-angle-right mr-2"></span>Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-sm-6 sub-two-right mt-lg-0 mt-sm-5 mt-4">
+                    <h6>Why CNC Infotech?</h6>
+                    <ul>
+                        <li><a>Live Projects</a></li>
+                        <li><a>Training & Development</a>
+                        </li>
+                        <li><a>Practical Training</a>
+                        </li>
+                        <li><a>Placement Assistance</a></li>
+						<li><a>Interview Preperations</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-sm-6 sub-two-right pl-lg-5 mt-lg-0 mt-sm-5 mt-4">
+                    <h6>Contact</h6>
+                    <p>3/322 Near Sabji Mandi, Sector 3 Malviya Nagar, Jaipur 302017<br>
+					+919649900725<br>
+					cncdost@gmail.com
+					</p>
+					<div class="columns-2">
+                        <ul class="social">
+                            <li><a target="_blank" href="https://www.youtube.com/c/CNCInfotech" title="facebook"><span class="fab fa-youtube"
+                                        aria-hidden="true"></span></a>
+                            </li>
+                            <li><a target="_blank" href="https://www.facebook.com/cncinfotech1/" title="facebook"><span class="fab fa-facebook-f"
+                                        aria-hidden="true"></span></a>
+                            </li>
+                            <li><a target="_blank" href="https://in.linkedin.com/in/cnc-infotech-81a469119" title="linkedin"><span class="fab fa-linkedin-in"
+                                        aria-hidden="true"></span></a>
+                            </li>
+                            <li><a target="_blank" href="https://twitter.com/infotech_cnc?lang=en" title="twitter"><span class="fab fa-twitter"
+                                        aria-hidden="true"></span></a>
+                            </li>
+                            <li><a target="_blank" href="https://www.instagram.com/cnc_infotech/?hl=en" title="instagram"><span class="fab fa-instagram"
+                                        aria-hidden="true"></span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- copyright -->
+        <div class="copyright-footer text-center mt-4">
+            <div class="container">
+                <div class="columns">
+                    <img src="assets/images/tag.png" class="img-fluid" alt="cnc infotech skill development private limited">
+                    <p>&copy; 2021 CNC Infotech Skill Development Private Limited. All rights reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- //copyright -->
+    </footer>
+    <!-- //footer -->
+    <!-- Js scripts -->
+    <!-- move top -->
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+        <span class="fas fa-level-up-alt" aria-hidden="true"></span>
+    </button>
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("movetop").style.display = "block";
+            } else {
+                document.getElementById("movetop").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <!-- //move top -->
+
+    <!-- common jquery plugin -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <!-- //common jquery plugin -->
+
+    <!-- theme switch js (light and dark)-->
+    <script src="assets/js/theme-change.js"></script>
+    <script>
+        function autoType(elementClass, typingSpeed) {
+            var thhis = $(elementClass);
+            thhis.css({
+                "position": "relative",
+                "display": "inline-block"
+            });
+            thhis.prepend('<div class="cursor" style="right: initial; left:0;"></div>');
+            thhis = thhis.find(".text-js");
+            var text = thhis.text().trim().split('');
+            var amntOfChars = text.length;
+            var newString = "";
+            thhis.text("|");
+            setTimeout(function () {
+                thhis.css("opacity", 1);
+                thhis.prev().removeAttr("style");
+                thhis.text("");
+                for (var i = 0; i < amntOfChars; i++) {
+                    (function (i, char) {
+                        setTimeout(function () {
+                            newString += char;
+                            thhis.text(newString);
+                        }, i * typingSpeed);
+                    })(i + 1, text[i]);
+                }
+            }, 1500);
+        }
+
+        $(document).ready(function () {
+            // Now to start autoTyping just call the autoType function with the 
+            // class of outer div
+            // The second paramter is the speed between each letter is typed.   
+            autoType(".type-js", 200);
+        });
+    </script>
+    <!-- //theme switch js (light and dark)-->
+
+    <!-- MENU-JS -->
+    <script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
+
+        //Main navigation Active Class Add Remove
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+    </script>
+    <!-- //MENU-JS -->
+
+    <!-- disable body scroll which navbar is in active -->
+    <script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+    </script>
+    <!-- //disable body scroll which navbar is in active -->
+
+    <!--bootstrap-->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- //bootstrap-->
+    <!-- //Js scripts -->
+</body>
+
+
+<!-- Mirrored from cncinfotech.in/web-technologies.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 05 Sep 2023 07:58:44 GMT -->
+</html>
+<br />
+<b>Warning</b>:  mysqli_connect(): (HY000/1045): Access denied for user 'cncinfot_cncadminuser'@'localhost' (using password: YES) in <b>/www/wwwroot/cncinfotech.in/config.php</b> on line <b>2</b><br />
+<!-- The Modal -->
+<div class="modal" id="myModalchat">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">CNC Support</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+       
+            <div class="form-group">
+  <label for="usr">Name *:</label>
+  <input type="text" class="form-control" id="name" required>
+</div>
+<div class="form-group">
+  <label for="usr">10 Digit Whatsapp Number *:</label>
+  <input type="number" class="form-control mobile-valid" id="number" required>
+</div>
+<div class="form-group">
+  <label for="sel1">Support Regarding *:</label>
+  <select class="form-control" id="msg" required>
+    <option selected disabled>Select Service</option>
+    <option value="%2AGreetings%20from%20CNC%20Infotech%21%21%21%2A%0A%0AWhich%20%2AIT%20course%2A%20are%20you%20interested%20in%3F%0A%0A%2A11.%2A%20C%20Language%0A%2A12.%2A%20C%2B%2B%20Language%0A%2A13.%2A%20Core%20JAVA%0A%2A14.%2A%20Advance%20JAVA%0A%2A15.%2A%20Python%0A%2A16.%2A%20PHP%20Programming%0A%2A17.%2A%20Digital%20Marketing%0A%2A18.%2A%20Web%20Designing%20%28HTML5%2C%20CSS3%2C%20Bootstrap%205%29%0A%2A19.%2A%20ReactJs%0A%2A110.%2A%20Angular%20JS%0A%2A111.%2A%20%20NODE%20JS%0A%2A112.%2A%20Networking%0A%2A113.%2A%20Desktop%20Publishing%20Tools%0A%2A114.%2A%20Adobe%20Photoshop%0A%2A115.%2A%20Corel%20Draw%0A%2A116.%2A%20Adobe%20Illustrator%0A%2A117.%2A%20Film%20Editing%0A%2A118.%2A%20Diploma%20in%20Financial%20Accounting%0A%2A119.%2A%20Tally%0A%2A120.%2A%20Advance%20Excel%0A%2A121.%2A%20Artificial%20Intelligence%0A%0AType%20Any%20%2ACourse%20Number%2A%20for%20details%0Aor%20%2A0%20for%20Home%2A">IT Courses</option>
+    <option value="%2AGreetings%20from%20CNC%20Infotech%21%21%21%2A%0A%0AWhat%20are%20you%20Interested%20in%3F%0A%2A21.%2A%20RKCL%20New%20Center%0A%2A22.%2A%20Books%20%26%20Certificate%0A%2A23.%2A%20Marketing%0A%2A24.%2A%20Tech%20Support%0A%0AType%20Any%20%2ANumber%20from%20above%2A%20for%20details%20or%20know%20more%0Aor%20%2A0%2A%20for%20Home">RKCL Services</option>
+    <option value="%2AGreetings%20from%20CNC%20Infotech%21%21%21%2A%0A%0AAbacus%20is%20usually%20utilized%20by%20youngsters%20under%20the%20age%20of%20thirteen.%20Instructors%20from%20%2ACNC%20Infotech%2A%20are%20always%20available%20to%20teach%20youngsters%20a%20way%20to%20use%20an%20abacus.%20The%20age%20range%20for%20admittance%20is%206%20to%2013%20years%20old%2C%20with%20a%2012%20months%20training%20period.%0A%0A%2ADuration%2A%204%20Months%20per%20Level%0A%2ALevels%2A%208%20Levels%0A%2ACertificate%2A%20After%20the%20successful%20completion%20of%20each%20level%20of%20the%20course.%0A%2AEligibility%2A%20Children%20of%20age%20group%206-13%20years.%0A%0AClick%20to%20know%20more%0Ahttps%3A%2F%2Fcncdost.com%2Fabacus.php%0A%0AReply%20%2A0%2A%20to%20Home">Abacus Training</option>
+    <option value="%2AGreetings%20from%20CNC%20Infotech%21%21%21%2A%0A%0AWe%20have%20collabration%20with%20following%20universities%20%20for%20%2ADistance%20Programs%2A%0A%0A%2ASURESH%20GYAN%20VIHAR%20UNIVERSITY%2A%0A%2AAvailable%20Programs%2A%0AMBA%20%28Marketing%20Management%2C%20Finance%20Management%2C%20Human%20Resource%20Manageement%2C%20Operation%20%26%20Production%20Management%2C%20Financial%20Planning%20%26%20Analysis%29%2C%0AMA%2C%0AM.Com%2C%0ABAJMC%2C%0ABA%20%28Economics-%20History%20%E2%80%93%20English%20Literature%29%20%28Psychology-%20Political%20Science-%20Economics%29%20%28Public%20Administration%20-%20Political%20Science%20-%20EnglishLiterature%29%20%28History-%20Political%20Science-%20Geography%29%20%28Political%20Science-%20Economics-%20Public%20Administration%29%20%28Economics-%20History%20%E2%80%93%20English%20Literature%29%20%28Geography%20%E2%80%93%20Public%20Administration%20%E2%80%93Economics%29%28Political%20Science%20-%20History-%20English%20Literature%29%0AB.Com%0AEXAM%20ONLINE%2C%20LMS%20PROVIDE%20TO%20EACH%20STUDENT%2C%20ONLINE%20AS%20WELL%20AS%20OFF%20LINE%20STUDY%20MATERIAL%20AVAILABLE%0A%0A%2ASwami%20Vivekanand%20Subharti%20University%2A%0A%2AAvailable%20Programs%2A%0ABA%20%28General%29%2C%0ABACHELOR%20OF%20LIBRARY%20AND%20INFORMATION%20SCIENCES%2C%0ABACHELOR%20OF%20BUSINESS%20ADMINISTRATION%2C%0ABACHELOR%20OF%20COMMERCE%2C%0ABACHELOR%20OF%20COMMERCE%20%28HONORS%29%2C%0ABACHELOR%20OF%20ARTS%20%28JOURNALISM%20AND%20MASS%20COMMUNICATION%29%2C%0AMASTER%20OF%20ARTS%20%28BUDDHIST%20STUDIES%2C%20EDUCATION%2C%20PUBLIC%20ADMINISTRATION%2C%20HOME%20SCIENCE%2C%20%20JOURNALISM%20AND%20MASS%20COMMUNICATION%2C%20POLITICAL%20SCIENCES%2C%20MATHEMATICS%2C%20SOCIOLOGY%2C%20HISTORY%2C%20HINDI%2C%20ECONOMICS%2C%20ENGLISH%29%2C%0AMASTER%20OF%20LIBRARY%20AND%20INFORMATION%20SCIENCES%2C%0AMBA%20%28INFORMATION%20TECHNOLOGY%2C%20HUMAN%20RESOURCE%20MANAGEMENT%2C%20MARKETING%20MANAGEMENT%2C%20FINANCIAL%20MANAGEMENT%2C%20FASHION%20DESIGNING%29%2C%0AMASTER%20OF%20COMMERCE%20%28MANAGEMENT%29%2C%0A%0A%2AMessage%2A%20for%20more%20information%20to%0Ahttps%3A%2F%2Fwa.me%2F919649905929%3Ftext%3DI%2527m%2520interested%2520in%2520Distance%2520Programs%0A%0Aor%20%2ACall%2A%20%20%2B91%209649905929%0A%0Aor%20Reply%20%2A0%20for%20Home%2A">Distance Degree Courses</option>
+    <option value="5">Regular Degree Courses</option>
+    <option value="%2AGreetings%20from%20CNC%20Infotech%20%21%21%21%2A%0AWe%20believe%20as%20Hindi%20is%20imbibed%20and%20ingrained%20in%20a%20natural%20and%20original%20way%20where%20first%20a%20child%20listens%2C%20absorbs%20and%20speaks%20but%20still%20a%20child%20takes%207%20to%208%20years%20to%20speak%20fluent%20Hindi.%0A%0ABut%20why%20English%20can%20be%20learnt%20within%20three%20months%20because%20we%20are%20used%20to%20using%20few%20English%20words%20in%20our%20day%20to%20day%20lives.%0A%0A%2AAvailable%20Courses%2A%0AEnglish%20Speaking%0AGroup%20Discussion%0APublic%20Speaking%0AEtiquette%0AVoice%20%26%20Accept%20Training%0ACorporate%20Training%0AInterview%20Skills%0AKids%20Special%0A%0Ahttps%3A%2F%2Fcncdost.com%2Fboon-english-hub.php%0A%0AReply%20%2A0%2A%20for%20Home">Boon English Hub</option>
+  </select>
+</div>
+<input type="hidden" value="61D7C68E4C6C3" id="instanceid">
+ <input type="hidden" value="d039c4f17cca6141da5355ac4a412a88" id="token">
+<button type="button" onclick="allfunc();" class="btn btn-primary">Next</button>
+      <div id="getsaved"></div>     
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
